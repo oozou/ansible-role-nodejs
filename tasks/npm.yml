@@ -13,7 +13,6 @@
   become: yes
   become_user: "{{ fubarhouse_user }}"
   shell: "{{ which_npm.stdout }} config set prefix /usr/local"
-  when: '"npm" in "{{ which_npm.stdout }}"'
   changed_when: false
   failed_when: false
   when: '"npm" in which_npm.stdout'
